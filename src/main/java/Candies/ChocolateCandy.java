@@ -1,5 +1,7 @@
 package Candies;
 
+import java.util.Objects;
+
 public abstract class ChocolateCandy extends Candy{
     private int cocoaAmount;
     private ChocolateType chocolateType;
@@ -22,4 +24,25 @@ public abstract class ChocolateCandy extends Candy{
 
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        ChocolateCandy that = (ChocolateCandy) o;
+        return cocoaAmount == that.cocoaAmount && chocolateType == that.chocolateType;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), cocoaAmount, chocolateType);
+    }
+
+    @Override
+    public String toString() {
+        return "ChocolateCandy{" +
+                "cocoaAmount=" + cocoaAmount +
+                ", chocolateType=" + chocolateType +
+                '}';
+    }
 }

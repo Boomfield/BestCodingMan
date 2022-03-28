@@ -7,4 +7,8 @@ public class Kinder extends ChocolateCandy{
         super(kinderWeight,kinderCocoaAmount,ChocolateType.Milk);
     }
 
+    @Override
+    public String toString() {
+        return"Kinder " + super.toString();
+    }
 }
